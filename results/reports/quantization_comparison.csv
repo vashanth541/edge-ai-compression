@@ -1,0 +1,11 @@
+Metric,FP32 Baseline (PyTorch),INT8 Quantized (TFLite),Delta / Ratio,Type
+Test Accuracy,55.41%,54.83%,-0.58 pp,Measured
+Macro-F1,0.5110,0.5179,+0.0069,Measured
+Model File Size,102.93 KB,21.77 KB,78.8% reduction,Measured
+Raw Weights Payload,20.50 KB,5.12 KB,4.00x reduction,Measured
+CPU Inference Latency,2.29 ms,0.30 ms,7.59x speedup,Measured
+Throughput,436.5 inf/s,3312.3 inf/s,-,Measured
+Input Type,float32,int8,-,Measured
+Output Type,float32,int8,-,Measured
+Total Parameters,"5,248 (FP32)","5,248 (INT8)",-,Measured
+Projected ESP32 Latency,~25-40 ms,~6-10 ms,~4x speedup,Estimated

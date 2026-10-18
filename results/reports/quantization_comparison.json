@@ -1,0 +1,552 @@
+{
+  "dataset_source": "data/raw/speech_commands",
+  "test_sample_count": 518,
+  "models": {
+    "fp32_pytorch": {
+      "format": "PyTorch State Dict (.pt)",
+      "file_path": "models\\checkpoints\\baseline_dscnn.pt",
+      "file_size_bytes": 105396,
+      "file_size_kb": 102.92578125,
+      "raw_weights_bytes": 20992,
+      "raw_weights_kb": 20.5,
+      "test_accuracy": 0.5540540540540541,
+      "macro_f1": 0.5109937790998764,
+      "latency_mean_ms": 2.2909029998845654,
+      "latency_std_ms": 0.9636136435676166,
+      "throughput_samples_per_sec": 436.5090970898324,
+      "per_class_metrics": {
+        "down": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 40
+        },
+        "go": {
+          "precision": 0.6190476190476191,
+          "recall": 0.5306122448979592,
+          "f1_score": 0.5714285714285714,
+          "support": 49
+        },
+        "left": {
+          "precision": 0.5,
+          "recall": 0.1590909090909091,
+          "f1_score": 0.2413793103448276,
+          "support": 44
+        },
+        "no": {
+          "precision": 0.39325842696629215,
+          "recall": 0.813953488372093,
+          "f1_score": 0.5303030303030303,
+          "support": 43
+        },
+        "off": {
+          "precision": 0.453125,
+          "recall": 0.6444444444444445,
+          "f1_score": 0.5321100917431193,
+          "support": 45
+        },
+        "on": {
+          "precision": 0.5344827586206896,
+          "recall": 0.7045454545454546,
+          "f1_score": 0.607843137254902,
+          "support": 44
+        },
+        "right": {
+          "precision": 0.509090909090909,
+          "recall": 0.875,
+          "f1_score": 0.6436781609195402,
+          "support": 32
+        },
+        "stop": {
+          "precision": 0.5454545454545454,
+          "recall": 0.4897959183673469,
+          "f1_score": 0.5161290322580645,
+          "support": 49
+        },
+        "up": {
+          "precision": 0.3448275862068966,
+          "recall": 0.23255813953488372,
+          "f1_score": 0.2777777777777778,
+          "support": 43
+        },
+        "yes": {
+          "precision": 0.7368421052631579,
+          "recall": 0.84,
+          "f1_score": 0.7850467289719626,
+          "support": 50
+        },
+        "_silence_": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 42
+        },
+        "_unknown_": {
+          "precision": 0.5416666666666666,
+          "recall": 0.35135135135135137,
+          "f1_score": 0.4262295081967213,
+          "support": 37
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          7,
+          0,
+          28,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          26,
+          0,
+          12,
+          2,
+          6,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          21,
+          1,
+          2,
+          12,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          0,
+          35,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          29,
+          8,
+          0,
+          1,
+          3,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          4,
+          0,
+          2,
+          6,
+          31,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          28,
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          10,
+          2,
+          0,
+          24,
+          8,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          16,
+          5,
+          0,
+          11,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          42,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          42,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          6,
+          0,
+          5,
+          3,
+          3,
+          4,
+          1,
+          0,
+          13
+        ]
+      ]
+    },
+    "int8_tflite": {
+      "format": "TensorFlow Lite FlatBuffer (.tflite)",
+      "file_path": "models\\quantized\\baseline_dscnn_int8.tflite",
+      "file_size_bytes": 22296,
+      "file_size_kb": 21.7734375,
+      "raw_weights_bytes": 5248,
+      "raw_weights_kb": 5.125,
+      "test_accuracy": 0.5482625482625483,
+      "macro_f1": 0.5179283343696641,
+      "latency_mean_ms": 0.3019019997736905,
+      "latency_std_ms": 0.17444862954359444,
+      "throughput_samples_per_sec": 3312.3331437009774,
+      "input_quantization": {
+        "dtype": "<class 'numpy.int8'>",
+        "scale": 0.47963058948516846,
+        "zero_point": 54
+      },
+      "output_quantization": {
+        "dtype": "<class 'numpy.int8'>",
+        "scale": 0.10094431042671204,
+        "zero_point": 82
+      },
+      "per_class_metrics": {
+        "down": {
+          "precision": 0.23076923076923078,
+          "recall": 0.075,
+          "f1_score": 0.11320754716981132,
+          "support": 40
+        },
+        "go": {
+          "precision": 0.6,
+          "recall": 0.6122448979591837,
+          "f1_score": 0.6060606060606062,
+          "support": 49
+        },
+        "left": {
+          "precision": 0.56,
+          "recall": 0.3181818181818182,
+          "f1_score": 0.4057971014492754,
+          "support": 44
+        },
+        "no": {
+          "precision": 0.4358974358974359,
+          "recall": 0.7906976744186046,
+          "f1_score": 0.5619834710743802,
+          "support": 43
+        },
+        "off": {
+          "precision": 0.42857142857142855,
+          "recall": 0.6666666666666666,
+          "f1_score": 0.5217391304347826,
+          "support": 45
+        },
+        "on": {
+          "precision": 0.5106382978723404,
+          "recall": 0.5454545454545454,
+          "f1_score": 0.5274725274725275,
+          "support": 44
+        },
+        "right": {
+          "precision": 0.5471698113207547,
+          "recall": 0.90625,
+          "f1_score": 0.6823529411764705,
+          "support": 32
+        },
+        "stop": {
+          "precision": 0.4897959183673469,
+          "recall": 0.4897959183673469,
+          "f1_score": 0.4897959183673469,
+          "support": 49
+        },
+        "up": {
+          "precision": 0.29411764705882354,
+          "recall": 0.11627906976744186,
+          "f1_score": 0.16666666666666666,
+          "support": 43
+        },
+        "yes": {
+          "precision": 0.8043478260869565,
+          "recall": 0.74,
+          "f1_score": 0.7708333333333333,
+          "support": 50
+        },
+        "_silence_": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 42
+        },
+        "_unknown_": {
+          "precision": 0.42857142857142855,
+          "recall": 0.32432432432432434,
+          "f1_score": 0.3692307692307692,
+          "support": 37
+        }
+      },
+      "confusion_matrix": [
+        [
+          3,
+          8,
+          0,
+          24,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          30,
+          0,
+          10,
+          3,
+          4,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          18,
+          0,
+          2,
+          7,
+          0,
+          3
+        ],
+        [
+          1,
+          4,
+          0,
+          34,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          30,
+          5,
+          0,
+          2,
+          2,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          6,
+          0,
+          4,
+          6,
+          24,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          29,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          2,
+          12,
+          2,
+          0,
+          24,
+          5,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          17,
+          5,
+          0,
+          14,
+          5,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          37,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          42,
+          0
+        ],
+        [
+          4,
+          1,
+          1,
+          2,
+          1,
+          6,
+          3,
+          6,
+          0,
+          1,
+          0,
+          12
+        ]
+      ]
+    }
+  },
+  "comparison": {
+    "accuracy_change_pp": -0.579150579150578,
+    "macro_f1_change": 0.006934555269787701,
+    "file_size_reduction_bytes": 83100,
+    "file_size_reduction_pct": 78.84549698280769,
+    "file_size_compression_ratio": 4.727125941872981,
+    "raw_weight_reduction_ratio": 4.0,
+    "speedup_ratio": 7.588233935521643
+  },
+  "operator_compatibility": {
+    "target_runtime": "TensorFlow Lite for Microcontrollers (TFLM)",
+    "esp32_acceleration_library": "ESP-NN (Espressif Optimized Kernels)",
+    "detected_operators": [
+      "CONV_2D (int8)",
+      "DEPTHWISE_CONV_2D (int8)",
+      "AVERAGE_POOL_2D (int8)",
+      "FULLY_CONNECTED (int8)",
+      "RESHAPE (int8)"
+    ],
+    "fully_supported_on_esp32": true,
+    "unsupported_operators": []
+  }
+}

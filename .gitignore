@@ -1,0 +1,64 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Datasets and raw audio recordings (prevents syncing thousands of .wav files)
+data/raw/
+data/processed/
+*.wav
+*.tar.gz
+*.zip
+!deployment/*.zip
+
+# Trained model checkpoints and large binary weights
+models/checkpoints/*.pt
+!models/checkpoints/baseline_dscnn.pt
+models/checkpoints/*.pth
+models/checkpoints/*.bin
+models/exported/*.onnx
+models/exported/*.tflite
+
+# Test & coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+Desktop.ini
+
+# Local reports & scratch files
+results/scratch/

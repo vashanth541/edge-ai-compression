@@ -1,0 +1,30 @@
+# ==============================================================================
+# Training Configuration for Baseline DS-CNN (Keyword Spotting)
+# Target: Low-latency, compact model for ESP32 microcontroller deployment
+# ==============================================================================
+
+model:
+  in_channels: 1
+  in_features: 40           # 40 MFCC coefficients
+  in_time_frames: 47        # 47 time frames (1.0s audio @ 16kHz)
+  num_classes: 12           # 10 targets + silence + unknown
+  first_conv_channels: 28   # Compact filter depth for <10k parameter budget
+  ds_blocks: 4              # 4 Depthwise Separable Conv blocks
+  dropout: 0.1
+
+training:
+  seed: 42
+  batch_size: 16            # Resource-conscious small batch size for Ryzen 3 CPU
+  learning_rate: 0.001      # Adam initial learning rate
+  weight_decay: 0.0001
+  epochs: 8                 # Modest epoch limit for CPU training
+  early_stopping_patience: 3
+  device: "cpu"
+
+paths:
+  data_dir: "data/raw/speech_commands"
+  checkpoint_dir: "models/checkpoints"
+  checkpoint_path: "models/checkpoints/baseline_dscnn.pt"
+  log_path: "results/reports/training_log.csv"
+  metrics_path: "results/reports/baseline_test_metrics.json"
+  report_path: "results/reports/baseline_report.md"

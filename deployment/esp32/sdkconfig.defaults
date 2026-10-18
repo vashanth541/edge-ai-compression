@@ -1,0 +1,19 @@
+# ESP32-S3 Target Configuration
+CONFIG_IDF_TARGET="esp32s3"
+CONFIG_IDF_TARGET_ESP32S3=y
+
+# CPU Clock: 240 MHz for high performance TinyML DSP & Inference
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ=240
+
+# Compiler Optimization: Optimize for Performance (-O2 / -O3)
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# FreeRTOS Tick Rate
+CONFIG_FREERTOS_HZ=1000
+
+# Flash Size (4MB standard)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+
+# Stack size for main task (16 KB for TFLM interpreter overhead)
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=16384

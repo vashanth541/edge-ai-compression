@@ -1,0 +1,26 @@
+{
+  "source_model_path": "C:\\Users\\ELCOT\\OneDrive\\Documents\\edge-ai-compression\\models\\quantized\\baseline_dscnn_int8.tflite",
+  "source_model_filename": "baseline_dscnn_int8.tflite",
+  "byte_length": 22296,
+  "sha256": "4753e7911e93f23a90d5bf19038eedd67312d381123e83d89bcb16c0cd5f6fe7",
+  "export_timestamp": "2026-10-17T13:37:58.895676+00:00",
+  "array_name": "g_model_data",
+  "len_name": "g_model_data_len",
+  "header_path": "C:\\Users\\ELCOT\\OneDrive\\Documents\\edge-ai-compression\\deployment\\esp32\\include\\model_data.h",
+  "labels_path": "C:\\Users\\ELCOT\\OneDrive\\Documents\\edge-ai-compression\\deployment\\esp32\\include\\model_labels.h",
+  "num_classes": 12,
+  "class_mapping": {
+    "0": "down",
+    "1": "go",
+    "2": "left",
+    "3": "no",
+    "4": "off",
+    "5": "on",
+    "6": "right",
+    "7": "stop",
+    "8": "up",
+    "9": "yes",
+    "10": "_silence_",
+    "11": "_unknown_"
+  }
+}

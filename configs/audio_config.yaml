@@ -1,0 +1,57 @@
+# ==============================================================================
+# Audio Feature Extraction & Preprocessing Configuration
+# Target: Keyword Spotting (KWS) on ESP32 Microcontrollers
+# ==============================================================================
+
+audio:
+  # Sampling and duration
+  sample_rate: 16000              # Standard speech recognition sample rate (16 kHz)
+  clip_duration_ms: 1000          # 1.0 second window
+  target_samples: 16000           # sample_rate * (clip_duration_ms / 1000)
+  channels: 1                     # Mono
+
+  # STFT / Spectrogram parameters
+  # In TinyML benchmarks (MLCommons / DS-CNN), 40ms window and 20ms stride are widely used:
+  # 40ms @ 16kHz = 640 samples (n_fft = 1024 or 512 with window=640)
+  # 20ms @ 16kHz = 320 samples stride -> results in (16000 - 640)/320 + 1 = 49 time frames
+  window_size_ms: 40.0
+  window_stride_ms: 20.0
+  win_length: 640                 # 40ms * 16000 / 1000
+  hop_length: 320                 # 20ms * 16000 / 1000
+  n_fft: 1024                     # Next power of 2 >= win_length (640)
+
+  # Mel Filterbank parameters
+  n_mels: 40                      # Number of Mel filterbanks
+  f_min: 20.0                     # Minimum frequency (Hz)
+  f_max: 4000.0                   # Maximum frequency (Hz) (speech energy concentrated < 4kHz)
+
+  # MFCC parameters
+  n_mfcc: 40                      # Number of MFCC coefficients
+  log_mels: true                  # Use log-mel spectrogram
+
+dataset:
+  # 10 target classes for standard KWS benchmark
+  target_commands:
+    - "yes"
+    - "no"
+    - "up"
+    - "down"
+    - "left"
+    - "right"
+    - "on"
+    - "off"
+    - "stop"
+    - "go"
+
+  # Special classes
+  silence_label: "_silence_"
+  unknown_label: "_unknown_"
+  
+  # Total classes = 10 target + 1 silence + 1 unknown = 12 classes
+  num_classes: 12
+
+  # Split ratios for custom partitioning (if not using official lists)
+  train_ratio: 0.80
+  val_ratio: 0.10
+  test_ratio: 0.10
+  random_seed: 42

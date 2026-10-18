@@ -1,0 +1,26 @@
+# ==============================================================================
+# INT8 Quantization Configuration for Baseline DS-CNN
+# Target: Microcontroller Deployment (ESP32 / TensorFlow Lite Micro)
+# ==============================================================================
+
+quantization:
+  method: "post_training_integer_quantization"
+  inference_input_type: "int8"
+  inference_output_type: "int8"
+  representative_samples_count: 150
+  calibration_split: "train"
+  target_ops: ["TFLITE_BUILTINS_INT8"]
+  preserve_fp32_baseline: true
+  tolerance_fp32_parity: 1e-4
+
+paths:
+  data_dir: "data/raw/speech_commands"
+  baseline_checkpoint: "models/checkpoints/baseline_dscnn.pt"
+  output_dir: "models/quantized"
+  fp32_tflite_path: "models/quantized/baseline_dscnn_fp32.tflite"
+  int8_tflite_path: "models/quantized/baseline_dscnn_int8.tflite"
+  reports_dir: "results/reports"
+  metrics_json_path: "results/reports/quantization_comparison.json"
+  comparison_csv_path: "results/reports/quantization_comparison.csv"
+  operator_report_path: "results/reports/operator_compatibility_report.md"
+  summary_report_path: "results/reports/quantization_report.md"
